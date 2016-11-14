@@ -72,7 +72,7 @@ FIQuery<Real, Segment2<Real>, Arc2<Real>>::operator()(
         result.intersect = false;
         for (int i = 0; i < scResult.numIntersections; ++i)
         {
-            if (abs(sqrt(Dot(scResult.point[i] - arc.center, scResult.point[i] - arc.center)) - arc.radius) < 1e-10 && arc.Contains(scResult.point[i]))
+            if (fabs(sqrt(Dot(scResult.point[i] - arc.center, scResult.point[i] - arc.center)) - arc.radius) < 1e-10 && arc.Contains(scResult.point[i]))
             {
                 result.intersect = true;
                 result.parameter[result.numIntersections]
